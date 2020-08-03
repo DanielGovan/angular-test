@@ -24,6 +24,7 @@
         scope.queuedTime = new Date() - new Date(scope.customer.joinedTime);
 
         scope.remove = function () {
+          console.log("Remove");
           $http
             .delete("/api/customer/remove", {
               params: {
@@ -32,6 +33,20 @@
             })
             .then(function (res) {
               scope.onRemoved();
+            });
+        };
+
+        scope.serve = function () {
+          // When a customer is served they are displayed in a list of served customers.
+          // When the customer is in the served list it should not be possible to remove
+          // or serve them again.
+          // console.log("serve", scope.customer);
+          $http
+            .put("/api/customer/serve", {
+              id: scope.customer.id,
+            })
+            .then(function (res) {
+              scope.onServed();
             });
         };
       },
