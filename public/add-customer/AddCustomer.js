@@ -17,7 +17,31 @@
           { name: "Cryptography advice" },
         ];
 
-        scope.addCustomer = function () {};
+        scope.add = function () {
+          if (!scope.product || !scope.name) {
+            //if form is incomplete do nothing
+            return null;
+          }
+          // add a customer with name and product.
+          // eg {
+          // 	id: uuid.v4(),
+          // 	name: "William Shakespeare",
+          // 	product: { name: "Grammatical advice" },
+          // 	joinedTime: new Date().toString(),
+          //   },
+          //do we need a time?
+          //console.log(scope, scope.name, scope.product);
+          $http
+            .post("/api/customer/add", {
+              name: scope.name,
+              product: scope.product,
+            })
+            .then(function (res) {
+              // clears name on submit
+              scope.name = null;
+              scope.onAdded();
+            });
+        };
       },
     };
   }
