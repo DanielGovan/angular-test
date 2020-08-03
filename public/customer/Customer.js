@@ -1,5 +1,6 @@
 (function () {
-  angular.module("qudini.QueueApp", []).directive("customer", Customer);
+  // was reinitialising the app which was conflicting
+  angular.module("qudini.QueueApp").directive("customer", Customer);
 
   Customer.$inject = ["$http"];
 
