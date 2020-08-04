@@ -2,34 +2,29 @@
 
 body
   background-image: url("./assets/flowers.jpg")
-  font-family: "Roboto", sans-serif
   background-size: cover
-  margin: 0
-  padding: 0
   display: flex
-  justify-content: center
-  flex-direction: column
-  margin: 20px 0
-  padding: 0 20px
-  line-height: 1.2
   font-family: "Roboto", sans-serif
   font-smooth: always
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: greyscale
+  flex-direction: column
+  justify-content: center
+  line-height: 1.2
+  margin: 20px 0
+  padding: 0 20px
 
 .box
+  background: linear-gradient(180deg, #fff, #ffcc91)
+  border: 1px solid #d38558
   border-radius: 10px
   box-shadow: 0px 5px 10px rgba (0, 0, 0, 0.25)
   padding: 20px 30px
   margin: 20px auto
-  background: linear-gradient(180deg, #fff, #ffcc91)
-  border: 1px solid #d38558
-  width: 700px
   max-width: 90%
+  width: 700px
 
   h2
-    text-align: center
     margin: 0 0 20px
+    text-align: center
 
   input
     line-height: 1.5
@@ -38,11 +33,12 @@ body
     height: 25px
 
   button
-    padding: 5px 10px
-    cursor: pointer
-    background: #eee
-    border-radius: 3px
     border: 1px solid #ac6545
+    border-radius: 3px
+    background: #eee
+    cursor: pointer
+    margin: 0 5px
+    padding: 5px 10px
 
     &:hover
       background: #f7e4cf
@@ -72,12 +68,10 @@ body
 .served
   @extend .box
 
-  button
+  button, .queuedTime
     display: none
 
 .customer
   margin-bottom: 10px
   span
     display: inline-block
-  //display: flex
-  //justify-content: space-between
