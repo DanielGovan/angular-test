@@ -1,7 +1,6 @@
 <div class="customer">
-  <span>{{ customer.name }}</span> -
-  <span>{{ customer.product.name }}</span>
-  <span>{{ customer.queuedTime }}</span>
+  <span>{{ customer.name }}</span> - <span>{{ customer.product.name }}</span>
+  <span class="queuedTime"> - {{ queuedTime | date: 'mm:ss' }}</span>
   <button ng-click="remove()">Remove</button>
   <button class="serve" ng-click="serve()">Serve</button>
 </div>
