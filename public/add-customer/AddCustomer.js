@@ -29,12 +29,12 @@
           // 	product: { name: "Grammatical advice" },
           // 	joinedTime: new Date().toString(),
           //   },
-          //do we need a time?
           //console.log(scope, scope.name, scope.product);
           $http
             .post("/api/customer/add", {
               name: scope.name,
               product: scope.product,
+              joinedTime: new Date().toString(),
             })
             .then(function (res) {
               // clears name on submit
