@@ -10,29 +10,35 @@
     <link rel="stylesheet" href="/styles.sass" />
   </head>
   <body ng-app="qudini.QueueApp" ng-controller="QueueController">
-    <h2>Add Customer</h2>
-    <add-customer on-added="onCustomerAdded()"></add-customer>
+    <div class="addCustomer">
+      <h2>Add Customer</h2>
+      <add-customer on-added="onCustomerAdded()"></add-customer>
+    </div>
 
-    <h2>Queueing Customers</h2>
-    <ul>
-      <li ng-repeat="customer in customers">
-        <customer
-          customer="customer"
-          on-served="onCustomerServed()"
-          on-removed="onCustomerRemoved()"
-        ></customer>
-      </li>
-    </ul>
+    <div class="queue">
+      <h2>Queueing Customers</h2>
+      <ul>
+        <li ng-repeat="customer in customers">
+          <customer
+            customer="customer"
+            on-served="onCustomerServed()"
+            on-removed="onCustomerRemoved()"
+          ></customer>
+        </li>
+      </ul>
+    </div>
 
-    <h2>Served customers</h2>
-    <ul>
-      <li ng-repeat="customer in customersServed">
-        <customer
-          customer="customer"
-          on-served="onCustomerServed()"
-          on-removed="onCustomerRemoved()"
-        ></customer>
-      </li>
-    </ul>
+    <div class="served">
+      <h2>Served customers</h2>
+      <ul>
+        <li ng-repeat="customer in customersServed">
+          <customer
+            customer="customer"
+            on-served="onCustomerServed()"
+            on-removed="onCustomerRemoved()"
+          ></customer>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
